@@ -14,6 +14,8 @@
 		3F4C608826E59CFE00A0B384 /* Pocket_Chef.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F4C608626E59CFE00A0B384 /* Pocket_Chef.xcdatamodeld */; };
 		3F4C608A26E59D0100A0B384 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F4C608926E59D0100A0B384 /* Assets.xcassets */; };
 		3F4C608D26E59D0100A0B384 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F4C608B26E59D0100A0B384 /* LaunchScreen.storyboard */; };
+		3F4C609526E7DA7500A0B384 /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F4C609426E7DA7500A0B384 /* GoogleService-Info (1).plist */; };
+		54F10663536264CD0D7815EB /* Pods_Pocket_Chef.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89820C35228F99038950016D /* Pods_Pocket_Chef.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		3F4C608926E59D0100A0B384 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F4C608C26E59D0100A0B384 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F4C608E26E59D0100A0B384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F4C609426E7DA7500A0B384 /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info (1).plist"; path = "../../../../../../Downloads/GoogleService-Info (1).plist"; sourceTree = "<group>"; };
+		89820C35228F99038950016D /* Pods_Pocket_Chef.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pocket_Chef.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		914F56DCBBCE498F91A93D9B /* Pods-Pocket-Chef.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocket-Chef.release.xcconfig"; path = "Target Support Files/Pods-Pocket-Chef/Pods-Pocket-Chef.release.xcconfig"; sourceTree = "<group>"; };
+		ACEE54072022BECC3E782A94 /* Pods-Pocket-Chef.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocket-Chef.debug.xcconfig"; path = "Target Support Files/Pods-Pocket-Chef/Pods-Pocket-Chef.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54F10663536264CD0D7815EB /* Pods_Pocket_Chef.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +51,8 @@
 			children = (
 				3F4C607C26E59CFE00A0B384 /* Pocket-Chef */,
 				3F4C607B26E59CFE00A0B384 /* Products */,
+				F60BF78DBC283710C37DE421 /* Pods */,
+				8B76EDFA68EDF3D65EA0F181 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +67,7 @@
 		3F4C607C26E59CFE00A0B384 /* Pocket-Chef */ = {
 			isa = PBXGroup;
 			children = (
+				3F4C609426E7DA7500A0B384 /* GoogleService-Info (1).plist */,
 				3F4C607D26E59CFE00A0B384 /* AppDelegate.swift */,
 				3F4C607F26E59CFE00A0B384 /* SceneDelegate.swift */,
 				3F4C608126E59CFE00A0B384 /* ViewController.swift */,
@@ -70,6 +80,24 @@
 			path = "Pocket-Chef";
 			sourceTree = "<group>";
 		};
+		8B76EDFA68EDF3D65EA0F181 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89820C35228F99038950016D /* Pods_Pocket_Chef.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F60BF78DBC283710C37DE421 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ACEE54072022BECC3E782A94 /* Pods-Pocket-Chef.debug.xcconfig */,
+				914F56DCBBCE498F91A93D9B /* Pods-Pocket-Chef.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +105,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F4C609126E59D0100A0B384 /* Build configuration list for PBXNativeTarget "Pocket-Chef" */;
 			buildPhases = (
+				D1D2F8199413F2F7DEABC76B /* [CP] Check Pods Manifest.lock */,
 				3F4C607626E59CFE00A0B384 /* Sources */,
 				3F4C607726E59CFE00A0B384 /* Frameworks */,
 				3F4C607826E59CFE00A0B384 /* Resources */,
+				BBE5761E09B987C17FFAF1D3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,10 +160,53 @@
 				3F4C608D26E59D0100A0B384 /* LaunchScreen.storyboard in Resources */,
 				3F4C608A26E59D0100A0B384 /* Assets.xcassets in Resources */,
 				3F4C608526E59CFE00A0B384 /* Main.storyboard in Resources */,
+				3F4C609526E7DA7500A0B384 /* GoogleService-Info (1).plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BBE5761E09B987C17FFAF1D3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pocket-Chef/Pods-Pocket-Chef-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pocket-Chef/Pods-Pocket-Chef-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pocket-Chef/Pods-Pocket-Chef-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1D2F8199413F2F7DEABC76B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pocket-Chef-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3F4C607626E59CFE00A0B384 /* Sources */ = {
@@ -287,6 +360,7 @@
 		};
 		3F4C609226E59D0100A0B384 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACEE54072022BECC3E782A94 /* Pods-Pocket-Chef.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -306,6 +380,7 @@
 		};
 		3F4C609326E59D0100A0B384 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 914F56DCBBCE498F91A93D9B /* Pods-Pocket-Chef.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
