@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,7 +14,7 @@
 		3F4C608826E59CFE00A0B384 /* Pocket_Chef.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F4C608626E59CFE00A0B384 /* Pocket_Chef.xcdatamodeld */; };
 		3F4C608A26E59D0100A0B384 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F4C608926E59D0100A0B384 /* Assets.xcassets */; };
 		3F4C608D26E59D0100A0B384 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F4C608B26E59D0100A0B384 /* LaunchScreen.storyboard */; };
-		3F4C609526E7DA7500A0B384 /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F4C609426E7DA7500A0B384 /* GoogleService-Info (1).plist */; };
+		3F4C609526E7DA7500A0B384 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F4C609426E7DA7500A0B384 /* GoogleService-Info.plist */; };
 		54F10663536264CD0D7815EB /* Pods_Pocket_Chef.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89820C35228F99038950016D /* Pods_Pocket_Chef.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +28,7 @@
 		3F4C608926E59D0100A0B384 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F4C608C26E59D0100A0B384 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F4C608E26E59D0100A0B384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F4C609426E7DA7500A0B384 /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info (1).plist"; path = "../../../../../../Downloads/GoogleService-Info (1).plist"; sourceTree = "<group>"; };
+		3F4C609426E7DA7500A0B384 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		89820C35228F99038950016D /* Pods_Pocket_Chef.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pocket_Chef.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		914F56DCBBCE498F91A93D9B /* Pods-Pocket-Chef.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocket-Chef.release.xcconfig"; path = "Target Support Files/Pods-Pocket-Chef/Pods-Pocket-Chef.release.xcconfig"; sourceTree = "<group>"; };
 		ACEE54072022BECC3E782A94 /* Pods-Pocket-Chef.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocket-Chef.debug.xcconfig"; path = "Target Support Files/Pods-Pocket-Chef/Pods-Pocket-Chef.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 		3F4C607C26E59CFE00A0B384 /* Pocket-Chef */ = {
 			isa = PBXGroup;
 			children = (
-				3F4C609426E7DA7500A0B384 /* GoogleService-Info (1).plist */,
+				3F4C609426E7DA7500A0B384 /* GoogleService-Info.plist */,
 				3F4C607D26E59CFE00A0B384 /* AppDelegate.swift */,
 				3F4C607F26E59CFE00A0B384 /* SceneDelegate.swift */,
 				3F4C608126E59CFE00A0B384 /* ViewController.swift */,
@@ -94,7 +94,6 @@
 				ACEE54072022BECC3E782A94 /* Pods-Pocket-Chef.debug.xcconfig */,
 				914F56DCBBCE498F91A93D9B /* Pods-Pocket-Chef.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -160,7 +159,7 @@
 				3F4C608D26E59D0100A0B384 /* LaunchScreen.storyboard in Resources */,
 				3F4C608A26E59D0100A0B384 /* Assets.xcassets in Resources */,
 				3F4C608526E59CFE00A0B384 /* Main.storyboard in Resources */,
-				3F4C609526E7DA7500A0B384 /* GoogleService-Info (1).plist in Resources */,
+				3F4C609526E7DA7500A0B384 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

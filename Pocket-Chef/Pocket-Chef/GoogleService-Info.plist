@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>484220882448-nhsf7slvm4smqs6im0pohk08ccm597mo.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.484220882448-nhsf7slvm4smqs6im0pohk08ccm597mo</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAnw0jqCjIZDvhES2ZNIhuvS-UM4VFDjbQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>484220882448</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.HaoZhong.Pocket-Chef</string>
+	<key>PROJECT_ID</key>
+	<string>pocket-chef-8c01e</string>
+	<key>STORAGE_BUCKET</key>
+	<string>pocket-chef-8c01e.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:484220882448:ios:eb3bad35db253e8ec80495</string>
+</dict>
+</plist>
