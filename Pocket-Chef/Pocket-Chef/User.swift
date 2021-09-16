@@ -9,7 +9,7 @@ import Foundation
 
 class User {
     // Stored Properties
-    let user_ID: Int
+    let user_ID: String
     var name: String
     var email: String
     var password: String
@@ -18,7 +18,7 @@ class User {
     
     // Initializer
     init(userName: String, email: String, pwd: String) {
-        self.user_ID = 0
+        self.user_ID = "0"
         self.name = userName
         self.email = email
         self.password = pwd

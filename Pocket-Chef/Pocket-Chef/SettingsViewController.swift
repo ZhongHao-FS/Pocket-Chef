@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import FirebaseAuthUI
 import FirebaseEmailAuthUI
 
 class SettingsViewController: UIViewController, FUIAuthDelegate {
