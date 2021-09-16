@@ -108,7 +108,7 @@
         <!--Settings-->
         <scene sceneID="3R5-o3-e23">
             <objects>
-                <viewController id="w64-RX-BOp" userLabel="Settings" sceneMemberID="viewController">
+                <viewController id="w64-RX-BOp" userLabel="Settings" customClass="SettingsViewController" customModule="Pocket_Chef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dcH-KI-a3V">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
