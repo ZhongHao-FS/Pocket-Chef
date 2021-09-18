@@ -9,17 +9,13 @@ import UIKit
 import FirebaseEmailAuthUI
 
 class SettingsViewController: UIViewController, FUIAuthDelegate {
-
+    var currentUser: User!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let authUI = FUIAuth.defaultAuthUI()
-        authUI?.delegate = self
-        let providers: [FUIAuthProvider] = [FUIEmailAuth()]
-        authUI!.providers = providers
-        let emailProvider = authUI!.providers.first as! FUIEmailAuth
-        emailProvider.signIn(withPresenting: self, email: nil)
+        
     }
     
 
