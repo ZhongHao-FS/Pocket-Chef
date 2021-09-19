@@ -1,28 +1,26 @@
 //
-//  Recipe.swift
+//  RecipeCard.swift
 //  Pocket-Chef
 //
-//  Created by Hao Zhong on 9/12/21.
+//  Created by Hao Zhong on 9/18/21.
 //
 
 import Foundation
 import UIKit
 
-class Recipe {
+class RecipeCard {
     // Stored Properties
     let id: Int
     let title: String
-    let calories: Int? = nil
-    let carbs: String? = nil
-    let fat: String? = nil
     var image: UIImage
-    let protein: String? = nil
+    let summary: String
     
     // Initializer
-    init(id: Int, title: String, imageURL: String) {
+    init(id: Int, title: String, imageURL: String, summary: String) {
         self.id = id
         self.title = title
         self.image = #imageLiteral(resourceName: "PocketChef")
+        self.summary = summary
         
         if let url = URL(string: imageURL) {
             do {
