@@ -13,14 +13,14 @@ class RecipeCard {
     let id: Int
     let title: String
     var image: UIImage
-    let summary: String
+    let type: String
     
     // Initializer
-    init(id: Int, title: String, imageURL: String, summary: String) {
+    init(id: Int, title: String, imageURL: String, type: String = "") {
         self.id = id
         self.title = title
         self.image = #imageLiteral(resourceName: "PocketChef")
-        self.summary = summary
+        self.type = type
         
         if let url = URL(string: imageURL) {
             do {

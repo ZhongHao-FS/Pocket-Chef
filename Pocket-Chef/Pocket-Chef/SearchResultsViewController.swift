@@ -1,53 +1,52 @@
 //
-//  ViewController.swift
+//  SearchResultsViewController.swift
 //  Pocket-Chef
 //
-//  Created by Hao Zhong on 9/5/21.
+//  Created by Hao Zhong on 9/19/21.
 //
 
 import UIKit
 import Foundation
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
+class SearchResultsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sampleRecipes.count
+        return returnedRecipes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Recipe_cell", for: indexPath) as! RecipeCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Recipe_cell2", for: indexPath) as! RecipeCollectionViewCell
+        var colorIndex = indexPath.item
+        while colorIndex >= 4 {
+            colorIndex -= 4
+        }
         
-        cell.backgroundColor = pallette[indexPath.item]
+        cell.backgroundColor = pallette[colorIndex]
         cell.layer.cornerRadius = 10
-        cell.dishName.text = sampleRecipes[indexPath.item].title
-        cell.dishPhoto.image = sampleRecipes[indexPath.item].image
+        cell.dishName.text = returnedRecipes[indexPath.item].title
+        cell.dishPhoto.image = returnedRecipes[indexPath.item].image
         cell.dishPhoto.frame.size = CGSize(width: 135, height: 135)
         cell.dishPhoto.layer.cornerRadius = 10
         
         return cell
     }
+
+    @IBOutlet weak var searchField: UITextField!
+    @IBOutlet weak var carousel: UICollectionView!
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if searchBar.text != nil {
-            performSegue(withIdentifier: "ToResults", sender: searchBar)
-        } else {
-            searchBar.placeholder = "Please enter a keyword!"
-        }
-    }
-    
-    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var featuredRecipes: UICollectionView!
-    
+    var keyword: String = ""
     let pallette: [UIColor] = [UIColor(red: CGFloat(208)/255.0, green: CGFloat(242)/255.0, blue: CGFloat(116)/255.0, alpha: 1.0), UIColor(red: CGFloat(254)/255.0, green: CGFloat(216)/255.0, blue: CGFloat(87)/255.0, alpha: 1.0), UIColor(red: CGFloat(252)/255.0, green: CGFloat(165)/255.0, blue: 0, alpha: 1.0), UIColor(red: CGFloat(221)/255.0, green: CGFloat(64)/255.0, blue: CGFloat(64)/255.0, alpha: 1.0)]
-    var sampleRecipes = [RecipeCard]()
+    var returnedRecipes = [RecipeCard]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        loadRandomRecipes()
-    }
 
-    func loadRandomRecipes() {
-        let request = NSMutableURLRequest(url: NSURL(string: "https://api.spoonacular.com/recipes/random?number=4&apiKey=56113b8493f8442dae66892e54246bfa")! as URL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+        // Do any additional setup after loading the view.
+        loadSearchResults(keyword)
+        searchField.text = keyword
+    }
+    
+    func loadSearchResults(_ keywords: String) {
+        let request = NSMutableURLRequest(url: NSURL(string: "https://api.spoonacular.com/recipes/complexSearch?query=\(keywords)&addRecipeInformation=true&apiKey=56113b8493f8442dae66892e54246bfa")! as URL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
         request.httpMethod = "GET"
         
         let session = URLSession.shared
@@ -64,7 +63,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             do {
                 if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
-                    guard let recipes = json["recipes"] as? [Any]
+                    guard let recipes = json["results"] as? [Any]
                     else {return}
                     for item in recipes {
                         guard let recipe = item as? [String: Any],
@@ -74,12 +73,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                         else { continue }
                         
                         if let types = recipe["dishTypes"] as? [String], types.count != 0 {
-                            self.sampleRecipes.append(RecipeCard(id: id, title: title, imageURL: imageURL, type: types[0]))
+                            self.returnedRecipes.append(RecipeCard(id: id, title: title, imageURL: imageURL, type: types[0]))
                         } else {
-                            self.sampleRecipes.append(RecipeCard(id: id, title: title, imageURL: imageURL))
+                            self.returnedRecipes.append(RecipeCard(id: id, title: title, imageURL: imageURL))
                         }
-                        
                     }
+                    print("data downloaded")
                 }
             }
             catch {
@@ -87,18 +86,31 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             }
             
             DispatchQueue.main.async {
-                self.featuredRecipes.delegate = self
-                self.featuredRecipes.reloadData()
+                self.carousel.delegate = self
+                self.carousel.reloadData()
+                print("cell loaded")
             }
         })
-
+        
         dataTask.resume()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? SearchResultsViewController {
-            destination.keyword = self.searchBar.text!
+    @IBAction func searchTapped(_ sender: UIButton) {
+        if let query = searchField.text {
+            loadSearchResults(query)
+        } else {
+            searchField.placeholder = "Enter a new keyword to search"
         }
     }
-}
+    
+    /*
+    // MARK: - Navigation
 
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
