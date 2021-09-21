@@ -30,8 +30,17 @@ class SearchResultsViewController: UIViewController, UICollectionViewDelegate, U
         return cell
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        largePhoto.image = returnedRecipes[indexPath.item].image
+        highlightName.text = returnedRecipes[indexPath.item].title
+        dishTypeLabel.text = returnedRecipes[indexPath.item].type
+    }
+    
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var carousel: UICollectionView!
+    @IBOutlet weak var largePhoto: UIImageView!
+    @IBOutlet weak var highlightName: UILabel!
+    @IBOutlet weak var dishTypeLabel: UILabel!
     
     var keyword: String = ""
     let pallette: [UIColor] = [UIColor(red: CGFloat(208)/255.0, green: CGFloat(242)/255.0, blue: CGFloat(116)/255.0, alpha: 1.0), UIColor(red: CGFloat(254)/255.0, green: CGFloat(216)/255.0, blue: CGFloat(87)/255.0, alpha: 1.0), UIColor(red: CGFloat(252)/255.0, green: CGFloat(165)/255.0, blue: 0, alpha: 1.0), UIColor(red: CGFloat(221)/255.0, green: CGFloat(64)/255.0, blue: CGFloat(64)/255.0, alpha: 1.0)]
@@ -78,7 +87,7 @@ class SearchResultsViewController: UIViewController, UICollectionViewDelegate, U
                             self.returnedRecipes.append(RecipeCard(id: id, title: title, imageURL: imageURL))
                         }
                     }
-                    print("data downloaded")
+                    
                 }
             }
             catch {
@@ -88,7 +97,10 @@ class SearchResultsViewController: UIViewController, UICollectionViewDelegate, U
             DispatchQueue.main.async {
                 self.carousel.delegate = self
                 self.carousel.reloadData()
-                print("cell loaded")
+                self.largePhoto.image = self.returnedRecipes[0].image
+                self.largePhoto.layer.cornerRadius = 15
+                self.highlightName.text = self.returnedRecipes[0].title
+                self.dishTypeLabel.text = self.returnedRecipes[0].type
             }
         })
         
