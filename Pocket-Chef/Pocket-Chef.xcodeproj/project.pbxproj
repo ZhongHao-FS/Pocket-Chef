@@ -22,6 +22,7 @@
 		3F5934A426F3CFD50096B4C1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5934A326F3CFD50096B4C1 /* LoginViewController.swift */; };
 		3F5934A626F6D03D0096B4C1 /* RecipeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5934A526F6D03D0096B4C1 /* RecipeCard.swift */; };
 		3F5934A826F808F40096B4C1 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5934A726F808F40096B4C1 /* SearchResultsViewController.swift */; };
+		3F5934AA26FA3A570096B4C1 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5934A926FA3A570096B4C1 /* RecipeDetailViewController.swift */; };
 		54F10663536264CD0D7815EB /* Pods_Pocket_Chef.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89820C35228F99038950016D /* Pods_Pocket_Chef.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		3F5934A326F3CFD50096B4C1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3F5934A526F6D03D0096B4C1 /* RecipeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCard.swift; sourceTree = "<group>"; };
 		3F5934A726F808F40096B4C1 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		3F5934A926FA3A570096B4C1 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		89820C35228F99038950016D /* Pods_Pocket_Chef.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pocket_Chef.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		914F56DCBBCE498F91A93D9B /* Pods-Pocket-Chef.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocket-Chef.release.xcconfig"; path = "Target Support Files/Pods-Pocket-Chef/Pods-Pocket-Chef.release.xcconfig"; sourceTree = "<group>"; };
 		ACEE54072022BECC3E782A94 /* Pods-Pocket-Chef.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocket-Chef.debug.xcconfig"; path = "Target Support Files/Pods-Pocket-Chef/Pods-Pocket-Chef.debug.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				3F5934A326F3CFD50096B4C1 /* LoginViewController.swift */,
 				3F5934A526F6D03D0096B4C1 /* RecipeCard.swift */,
 				3F5934A726F808F40096B4C1 /* SearchResultsViewController.swift */,
+				3F5934A926FA3A570096B4C1 /* RecipeDetailViewController.swift */,
 			);
 			path = "Pocket-Chef";
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				3F4C608826E59CFE00A0B384 /* Pocket_Chef.xcdatamodeld in Sources */,
 				3F59349A26EE77B40096B4C1 /* Recipe.swift in Sources */,
 				3F59349E26F0F5350096B4C1 /* User.swift in Sources */,
+				3F5934AA26FA3A570096B4C1 /* RecipeDetailViewController.swift in Sources */,
 				3F5934A226F2E49F0096B4C1 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
