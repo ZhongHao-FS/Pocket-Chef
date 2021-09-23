@@ -26,6 +26,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedIndex = indexPath.item
+        performSegue(withIdentifier: "MainToRecipe", sender: featuredRecipes)
+    }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if searchBar.text != nil {
             performSegue(withIdentifier: "ToResults", sender: searchBar)
@@ -39,6 +44,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     let pallette: [UIColor] = [UIColor(red: CGFloat(208)/255.0, green: CGFloat(242)/255.0, blue: CGFloat(116)/255.0, alpha: 1.0), UIColor(red: CGFloat(254)/255.0, green: CGFloat(216)/255.0, blue: CGFloat(87)/255.0, alpha: 1.0), UIColor(red: CGFloat(252)/255.0, green: CGFloat(165)/255.0, blue: 0, alpha: 1.0), UIColor(red: CGFloat(221)/255.0, green: CGFloat(64)/255.0, blue: CGFloat(64)/255.0, alpha: 1.0)]
     var sampleRecipes = [RecipeCard]()
+    var selectedIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,6 +104,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? SearchResultsViewController {
             destination.keyword = self.searchBar.text!
+        } else if let destination = segue.destination as? RecipeDetailViewController {
+            destination.displayingRecipe = self.sampleRecipes[selectedIndex]
         }
     }
 }

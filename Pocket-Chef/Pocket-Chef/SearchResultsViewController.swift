@@ -34,6 +34,7 @@ class SearchResultsViewController: UIViewController, UICollectionViewDelegate, U
         largePhoto.image = returnedRecipes[indexPath.item].image
         highlightName.text = returnedRecipes[indexPath.item].title
         dishTypeLabel.text = returnedRecipes[indexPath.item].type
+        selectedIndex = indexPath.item
     }
     
     @IBOutlet weak var searchField: UITextField!
@@ -45,6 +46,7 @@ class SearchResultsViewController: UIViewController, UICollectionViewDelegate, U
     var keyword: String = ""
     let pallette: [UIColor] = [UIColor(red: CGFloat(208)/255.0, green: CGFloat(242)/255.0, blue: CGFloat(116)/255.0, alpha: 1.0), UIColor(red: CGFloat(254)/255.0, green: CGFloat(216)/255.0, blue: CGFloat(87)/255.0, alpha: 1.0), UIColor(red: CGFloat(252)/255.0, green: CGFloat(165)/255.0, blue: 0, alpha: 1.0), UIColor(red: CGFloat(221)/255.0, green: CGFloat(64)/255.0, blue: CGFloat(64)/255.0, alpha: 1.0)]
     var returnedRecipes = [RecipeCard]()
+    var selectedIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +54,15 @@ class SearchResultsViewController: UIViewController, UICollectionViewDelegate, U
         // Do any additional setup after loading the view.
         loadSearchResults(keyword)
         searchField.text = keyword
+        
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped))
+        largePhoto.addGestureRecognizer(tapGR)
+    }
+    
+    @objc func imageTapped(sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            performSegue(withIdentifier: "ToRecipe", sender: sender)
+        }
     }
     
     func loadSearchResults(_ keywords: String) {
@@ -115,14 +126,16 @@ class SearchResultsViewController: UIViewController, UICollectionViewDelegate, U
         }
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
+        if let destination = segue.destination as? RecipeDetailViewController {
+            destination.displayingRecipe = self.returnedRecipes[self.selectedIndex]
+        }
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
