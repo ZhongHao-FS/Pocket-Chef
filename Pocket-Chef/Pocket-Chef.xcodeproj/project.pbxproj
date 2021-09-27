@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F2A616827003062004A91D2 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A616727003062004A91D2 /* Ingredient.swift */; };
+		3F2A616A270146F5004A91D2 /* InstructionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A6169270146F5004A91D2 /* InstructionTableViewController.swift */; };
+		3F2A616C27015E88004A91D2 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A616B27015E88004A91D2 /* InstructionsViewController.swift */; };
 		3F4C607E26E59CFE00A0B384 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4C607D26E59CFE00A0B384 /* AppDelegate.swift */; };
 		3F4C608026E59CFE00A0B384 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4C607F26E59CFE00A0B384 /* SceneDelegate.swift */; };
 		3F4C608226E59CFE00A0B384 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4C608126E59CFE00A0B384 /* ViewController.swift */; };
@@ -24,11 +27,13 @@
 		3F5934A826F808F40096B4C1 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5934A726F808F40096B4C1 /* SearchResultsViewController.swift */; };
 		3F5934AA26FA3A570096B4C1 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5934A926FA3A570096B4C1 /* RecipeDetailViewController.swift */; };
 		3F5934AE26FC2B7D0096B4C1 /* IngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5934AD26FC2B7D0096B4C1 /* IngredientsViewController.swift */; };
-		3F5934B026FC2C4A0096B4C1 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5934AF26FC2C4A0096B4C1 /* InstructionsViewController.swift */; };
 		54F10663536264CD0D7815EB /* Pods_Pocket_Chef.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89820C35228F99038950016D /* Pods_Pocket_Chef.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F2A616727003062004A91D2 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		3F2A6169270146F5004A91D2 /* InstructionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionTableViewController.swift; sourceTree = "<group>"; };
+		3F2A616B27015E88004A91D2 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 		3F4C607A26E59CFE00A0B384 /* Pocket-Chef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket-Chef.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F4C607D26E59CFE00A0B384 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F4C607F26E59CFE00A0B384 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +53,6 @@
 		3F5934A726F808F40096B4C1 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		3F5934A926FA3A570096B4C1 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		3F5934AD26FC2B7D0096B4C1 /* IngredientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsViewController.swift; sourceTree = "<group>"; };
-		3F5934AF26FC2C4A0096B4C1 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 		89820C35228F99038950016D /* Pods_Pocket_Chef.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pocket_Chef.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		914F56DCBBCE498F91A93D9B /* Pods-Pocket-Chef.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocket-Chef.release.xcconfig"; path = "Target Support Files/Pods-Pocket-Chef/Pods-Pocket-Chef.release.xcconfig"; sourceTree = "<group>"; };
 		ACEE54072022BECC3E782A94 /* Pods-Pocket-Chef.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocket-Chef.debug.xcconfig"; path = "Target Support Files/Pods-Pocket-Chef/Pods-Pocket-Chef.debug.xcconfig"; sourceTree = "<group>"; };
@@ -105,7 +109,9 @@
 				3F5934A726F808F40096B4C1 /* SearchResultsViewController.swift */,
 				3F5934A926FA3A570096B4C1 /* RecipeDetailViewController.swift */,
 				3F5934AD26FC2B7D0096B4C1 /* IngredientsViewController.swift */,
-				3F5934AF26FC2C4A0096B4C1 /* InstructionsViewController.swift */,
+				3F2A616727003062004A91D2 /* Ingredient.swift */,
+				3F2A6169270146F5004A91D2 /* InstructionTableViewController.swift */,
+				3F2A616B27015E88004A91D2 /* InstructionsViewController.swift */,
 			);
 			path = "Pocket-Chef";
 			sourceTree = "<group>";
@@ -262,7 +268,9 @@
 			files = (
 				3F5934AE26FC2B7D0096B4C1 /* IngredientsViewController.swift in Sources */,
 				3F5934A426F3CFD50096B4C1 /* LoginViewController.swift in Sources */,
+				3F2A616827003062004A91D2 /* Ingredient.swift in Sources */,
 				3F5934A626F6D03D0096B4C1 /* RecipeCard.swift in Sources */,
+				3F2A616A270146F5004A91D2 /* InstructionTableViewController.swift in Sources */,
 				3F59349C26EEBA360096B4C1 /* RecipeCollectionViewCell.swift in Sources */,
 				3F5934A826F808F40096B4C1 /* SearchResultsViewController.swift in Sources */,
 				3F4C608226E59CFE00A0B384 /* ViewController.swift in Sources */,
@@ -272,7 +280,7 @@
 				3F59349A26EE77B40096B4C1 /* Recipe.swift in Sources */,
 				3F59349E26F0F5350096B4C1 /* User.swift in Sources */,
 				3F5934AA26FA3A570096B4C1 /* RecipeDetailViewController.swift in Sources */,
-				3F5934B026FC2C4A0096B4C1 /* InstructionsViewController.swift in Sources */,
+				3F2A616C27015E88004A91D2 /* InstructionsViewController.swift in Sources */,
 				3F5934A226F2E49F0096B4C1 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -2,7 +2,7 @@
 //  InstructionsViewController.swift
 //  Pocket-Chef
 //
-//  Created by Hao Zhong on 9/22/21.
+//  Created by Hao Zhong on 9/26/21.
 //
 
 import UIKit
@@ -13,28 +13,9 @@ class InstructionsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGesture))
-        swipeRight.direction = .right
-        self.view.addGestureRecognizer(swipeRight)
-
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGesture))
-        swipeLeft.direction = .left
-        self.view.addGestureRecognizer(swipeLeft)
     }
     
-    @objc func handleSwipeGesture(_ gesture: UISwipeGestureRecognizer) {
-      guard let tabBarController = tabBarController, let viewControllers = tabBarController.viewControllers else { return }
-      let tabs = viewControllers.count
-      if gesture.direction == .left {
-          if (tabBarController.selectedIndex) < tabs {
-              tabBarController.selectedIndex += 1
-          }
-      } else if gesture.direction == .right {
-          if (tabBarController.selectedIndex) > 0 {
-              tabBarController.selectedIndex -= 1
-          }
-      }
-    }
+
     /*
     // MARK: - Navigation
 
