@@ -12,6 +12,7 @@ class InstructionTableViewController: UITableViewController {
 
     var id = 0
     var instructions = [String]()
+    var recipeName = ""
     
     private var appDelegate: AppDelegate!
     private var managedContext: NSManagedObjectContext!
@@ -68,7 +69,7 @@ class InstructionTableViewController: UITableViewController {
                 let newInstruction = NSManagedObject(entity: entityInstruction!, insertInto: self.managedContext)
                 newInstruction.setValue(self.id, forKey: "id")
                 newInstruction.setValue(self.instructions, forKey: "steps")
-                
+                newInstruction.setValue(self.recipeName, forKey: "title")
                 self.appDelegate.saveContext()
             }
         })

@@ -76,6 +76,7 @@ class RecipeDetailViewController: UIViewController {
             destination.id = self.displayingRecipe.id
         } else if let destination = segue.destination as? InstructionTableViewController {
             destination.id = self.displayingRecipe.id
+            destination.recipeName = self.displayingRecipe.title
         }
         
         
