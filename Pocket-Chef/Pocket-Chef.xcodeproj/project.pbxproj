@@ -10,6 +10,7 @@
 		3F2A616827003062004A91D2 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A616727003062004A91D2 /* Ingredient.swift */; };
 		3F2A616A270146F5004A91D2 /* InstructionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A6169270146F5004A91D2 /* InstructionTableViewController.swift */; };
 		3F2A616C27015E88004A91D2 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A616B27015E88004A91D2 /* InstructionsViewController.swift */; };
+		3F2A616E27027A13004A91D2 /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A616D27027A13004A91D2 /* ShoppingViewController.swift */; };
 		3F4C607E26E59CFE00A0B384 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4C607D26E59CFE00A0B384 /* AppDelegate.swift */; };
 		3F4C608026E59CFE00A0B384 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4C607F26E59CFE00A0B384 /* SceneDelegate.swift */; };
 		3F4C608226E59CFE00A0B384 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4C608126E59CFE00A0B384 /* ViewController.swift */; };
@@ -34,6 +35,7 @@
 		3F2A616727003062004A91D2 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		3F2A6169270146F5004A91D2 /* InstructionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionTableViewController.swift; sourceTree = "<group>"; };
 		3F2A616B27015E88004A91D2 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
+		3F2A616D27027A13004A91D2 /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
 		3F4C607A26E59CFE00A0B384 /* Pocket-Chef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket-Chef.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F4C607D26E59CFE00A0B384 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F4C607F26E59CFE00A0B384 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				3F2A616727003062004A91D2 /* Ingredient.swift */,
 				3F2A6169270146F5004A91D2 /* InstructionTableViewController.swift */,
 				3F2A616B27015E88004A91D2 /* InstructionsViewController.swift */,
+				3F2A616D27027A13004A91D2 /* ShoppingViewController.swift */,
 			);
 			path = "Pocket-Chef";
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				3F5934A626F6D03D0096B4C1 /* RecipeCard.swift in Sources */,
 				3F2A616A270146F5004A91D2 /* InstructionTableViewController.swift in Sources */,
 				3F59349C26EEBA360096B4C1 /* RecipeCollectionViewCell.swift in Sources */,
+				3F2A616E27027A13004A91D2 /* ShoppingViewController.swift in Sources */,
 				3F5934A826F808F40096B4C1 /* SearchResultsViewController.swift in Sources */,
 				3F4C608226E59CFE00A0B384 /* ViewController.swift in Sources */,
 				3F4C607E26E59CFE00A0B384 /* AppDelegate.swift in Sources */,
