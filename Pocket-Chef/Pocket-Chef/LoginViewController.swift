@@ -36,9 +36,10 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
         handle = Auth.auth().addStateDidChangeListener({ auth, user in
             if let user = user {
                 let uid = user.uid
+                let name = user.displayName!
                 let email = user.email!
                 
-                self.currentUser = User(id: uid, email: email)
+                self.currentUser = User(id: uid, name: name, email: email)
             }
         })
     }
@@ -74,5 +75,14 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
         
     }
     
-
+    @IBAction func unwindToLogin(_ unwindSegue: UIStoryboardSegue) {
+        _ = unwindSegue.source
+        
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print(signOutError.localizedDescription)
+        }
+    }
 }

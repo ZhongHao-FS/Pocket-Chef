@@ -7,6 +7,8 @@
 
 import UIKit
 import CoreData
+import FirebaseEmailAuthUI
+import FirebaseDatabase
 
 class ShoppingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,6 +50,9 @@ class ShoppingViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var clearButton: UIButton!
     
     var list = [Ingredient]()
+    var currentUid = ""
+    var handle: AuthStateDidChangeListenerHandle?
+    var ref: DatabaseReference!
     
     private var appDelegate: AppDelegate!
     private var managedContext: NSManagedObjectContext!
@@ -58,8 +63,24 @@ class ShoppingViewController: UIViewController, UITableViewDelegate, UITableView
         // Do any additional setup after loading the view.
         loadShoppingList()
         clearButton.layer.cornerRadius = 30
+        
         appDelegate = UIApplication.shared.delegate as? AppDelegate
         managedContext = appDelegate.persistentContainer.viewContext
+        
+        ref = Database.database().reference()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        handle = Auth.auth().addStateDidChangeListener({
+            auth, user in
+            if let user = user {
+                self.currentUid = user.uid
+            }
+        })
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Auth.auth().removeStateDidChangeListener(handle!)
     }
     
     func loadShoppingList() {
@@ -104,6 +125,28 @@ class ShoppingViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    @IBAction func shareTapped(_ sender: UIButton) {
+        let actionSheet = UIAlertController(title: "Cloud Storage", message: "Save as my frequent shopping list?", preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "on Firebase", style: .default, handler: {_ in
+            self.saveList()
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(actionSheet, animated: true, completion: nil)
+    }
+    
+    func saveList() {
+        if currentUid == "" {
+            tabBarController?.selectedIndex = 3
+        } else {
+            for i in 0...list.count-1 {
+                self.ref.child("SavedLists").child(currentUid).child("\(i)").setValue([
+                    "item": list[i].name,
+                    "value": list[i].amount,
+                    "unit": list[i].unit
+                ])
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 

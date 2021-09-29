@@ -10,13 +10,15 @@ import Foundation
 class User {
     // Stored Properties
     let user_ID: String
+    var name: String
     var email: String
     var fav_Recipes = [Recipe]()
-    var shoppingList = [String]()
+    var shoppingList = [Ingredient]()
     
     // Initializer
-    init(id: String, email: String) {
+    init(id: String, name: String, email: String) {
         self.user_ID = id
+        self.name = name
         self.email = email
     }
 }

@@ -46,6 +46,7 @@ class SearchResultsViewController: UIViewController, UICollectionViewDelegate, U
     var keyword: String = ""
     let pallette: [UIColor] = [UIColor(red: CGFloat(208)/255.0, green: CGFloat(242)/255.0, blue: CGFloat(116)/255.0, alpha: 1.0), UIColor(red: CGFloat(254)/255.0, green: CGFloat(216)/255.0, blue: CGFloat(87)/255.0, alpha: 1.0), UIColor(red: CGFloat(252)/255.0, green: CGFloat(165)/255.0, blue: 0, alpha: 1.0), UIColor(red: CGFloat(221)/255.0, green: CGFloat(64)/255.0, blue: CGFloat(64)/255.0, alpha: 1.0)]
     var returnedRecipes = [RecipeCard]()
+    var urlArray = [String]()
     var selectedIndex = 0
     
     override func viewDidLoad() {
@@ -97,6 +98,8 @@ class SearchResultsViewController: UIViewController, UICollectionViewDelegate, U
                         } else {
                             self.returnedRecipes.append(RecipeCard(id: id, title: title, imageURL: imageURL))
                         }
+                        
+                        self.urlArray.append(imageURL)
                     }
                     
                 }
@@ -132,9 +135,11 @@ class SearchResultsViewController: UIViewController, UICollectionViewDelegate, U
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         if let destination = segue.destination as? RecipeDetailViewController {
+            // Pass the selected object to the new view controller.
             destination.displayingRecipe = self.returnedRecipes[self.selectedIndex]
+            destination.photoURL = self.urlArray[self.selectedIndex]
         }
-        // Pass the selected object to the new view controller.
+        
     }
     
 

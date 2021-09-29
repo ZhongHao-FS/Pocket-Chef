@@ -6,18 +6,25 @@
 //
 
 import UIKit
+import FirebaseEmailAuthUI
+import FirebaseDatabase
 
 class RecipeDetailViewController: UIViewController {
 
     @IBOutlet weak var photoView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var favButton: UIButton!
     @IBOutlet weak var containerViewA: UIView!
     @IBOutlet weak var containerViewB: UIView!
     @IBOutlet weak var contentSwitch: UISegmentedControl!
     
     var displayingRecipe: RecipeCard! = nil
     var background: UIImageView! = nil
+    var photoURL = ""
+    var currentUid = ""
+    var handle: AuthStateDidChangeListenerHandle?
+    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +49,21 @@ class RecipeDetailViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = strokeTextAttributes
         navigationController?.navigationBar.tintColor = UIColor(red: CGFloat(55)/255.0, green: CGFloat(236)/255.0, blue: CGFloat(110)/255.0, alpha: 1.0)
         navigationItem.title = displayingRecipe.title
+        
+        ref = Database.database().reference()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        handle = Auth.auth().addStateDidChangeListener({
+            auth, user in
+            if let user = user {
+                self.currentUid = user.uid
+            }
+        })
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Auth.auth().removeStateDidChangeListener(handle!)
     }
     
     override func viewDidLayoutSubviews() {
@@ -49,6 +71,18 @@ class RecipeDetailViewController: UIViewController {
 
         background.bounds = photoView.bounds
         photoView.sendSubviewToBack(background)
+    }
+    
+    @IBAction func heartTapped(_ sender: UIButton) {
+        if favButton.state == .normal {
+            self.ref.child("FavRecipes/\(currentUid)/\(displayingRecipe.id)").removeValue()
+        } else if favButton.state == .selected {
+            self.ref.child("FavRecipes").child("\(currentUid)").child("\(displayingRecipe.id)").setValue([
+                "name": displayingRecipe.title,
+                "type": displayingRecipe.type,
+                "imageURL": photoURL
+            ])
+        }
     }
     
     @IBAction func selectionChanged(_ sender: UISegmentedControl) {
