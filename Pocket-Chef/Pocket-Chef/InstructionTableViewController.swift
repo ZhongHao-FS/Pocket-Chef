@@ -7,12 +7,40 @@
 
 import UIKit
 import CoreData
+import WatchConnectivity
 
-class InstructionTableViewController: UITableViewController {
-
+class InstructionTableViewController: UITableViewController, WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {}
+    
+    func sessionDidDeactivate(_ session: WCSession) {}
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+        DispatchQueue.main.async {
+            if let getList = message["getObjectList"] as? Bool {
+                if getList {
+                    guard let data = try? NSKeyedArchiver.archivedData(withRootObject: self.instructions, requiringSecureCoding: false)
+                    else {
+                        fatalError("NSArchiving Error")
+                    }
+                    replyHandler(["passObjectList": data])
+                }
+            }
+        }
+    }
+    
     var id = 0
     var instructions = [String]()
     var recipeName = ""
+    var session: WCSession? {
+        didSet {
+            if let session = session {
+                session.delegate = self
+                session.activate()
+            }
+        }
+    }
     
     private var appDelegate: AppDelegate!
     private var managedContext: NSManagedObjectContext!
@@ -23,6 +51,10 @@ class InstructionTableViewController: UITableViewController {
         appDelegate = UIApplication.shared.delegate as? AppDelegate
         managedContext = appDelegate.persistentContainer.viewContext
         loadInstructions()
+        
+        if WCSession.isSupported() {
+            session = WCSession.default
+        }
     }
 
     func loadInstructions() {
