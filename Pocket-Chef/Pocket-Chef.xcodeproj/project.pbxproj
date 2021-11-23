@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F06A869272ADAB7005D076B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F06A867272ADAB7005D076B /* Interface.storyboard */; };
+		3F06A86B272ADABE005D076B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F06A86A272ADABE005D076B /* Assets.xcassets */; };
+		3F06A872272ADABE005D076B /* PocketChefWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3F06A871272ADABE005D076B /* PocketChefWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3F06A877272ADABF005D076B /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06A876272ADABF005D076B /* InterfaceController.swift */; };
+		3F06A879272ADABF005D076B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06A878272ADABF005D076B /* ExtensionDelegate.swift */; };
+		3F06A87B272ADABF005D076B /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06A87A272ADABF005D076B /* NotificationController.swift */; };
+		3F06A87D272ADABF005D076B /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06A87C272ADABF005D076B /* ComplicationController.swift */; };
+		3F06A87F272ADAC4005D076B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F06A87E272ADAC4005D076B /* Assets.xcassets */; };
+		3F06A884272ADAC4005D076B /* PocketChefWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3F06A865272ADAB7005D076B /* PocketChefWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3F2A616827003062004A91D2 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A616727003062004A91D2 /* Ingredient.swift */; };
 		3F2A616A270146F5004A91D2 /* InstructionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A6169270146F5004A91D2 /* InstructionTableViewController.swift */; };
 		3F2A616C27015E88004A91D2 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A616B27015E88004A91D2 /* InstructionsViewController.swift */; };
@@ -35,7 +44,61 @@
 		54F10663536264CD0D7815EB /* Pods_Pocket_Chef.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89820C35228F99038950016D /* Pods_Pocket_Chef.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3F06A873272ADABE005D076B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F4C607226E59CFE00A0B384 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F06A870272ADABE005D076B;
+			remoteInfo = "PocketChefWatch Extension";
+		};
+		3F06A882272ADAC4005D076B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F4C607226E59CFE00A0B384 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F06A864272ADAB7005D076B;
+			remoteInfo = PocketChefWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3F06A885272ADAC4005D076B /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				3F06A884272ADAC4005D076B /* PocketChefWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F06A888272ADAC4005D076B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3F06A872272ADABE005D076B /* PocketChefWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		3F06A865272ADAB7005D076B /* PocketChefWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketChefWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F06A868272ADAB7005D076B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		3F06A86A272ADABE005D076B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3F06A86C272ADABE005D076B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F06A871272ADABE005D076B /* PocketChefWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "PocketChefWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F06A876272ADABF005D076B /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		3F06A878272ADABF005D076B /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		3F06A87A272ADABF005D076B /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		3F06A87C272ADABF005D076B /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		3F06A87E272ADAC4005D076B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3F06A880272ADAC4005D076B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F06A881272ADAC4005D076B /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		3F2A616727003062004A91D2 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		3F2A6169270146F5004A91D2 /* InstructionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionTableViewController.swift; sourceTree = "<group>"; };
 		3F2A616B27015E88004A91D2 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +132,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3F06A86E272ADABE005D076B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3F4C607726E59CFE00A0B384 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -80,10 +150,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F06A866272ADAB7005D076B /* PocketChefWatch */ = {
+			isa = PBXGroup;
+			children = (
+				3F06A867272ADAB7005D076B /* Interface.storyboard */,
+				3F06A86A272ADABE005D076B /* Assets.xcassets */,
+				3F06A86C272ADABE005D076B /* Info.plist */,
+			);
+			path = PocketChefWatch;
+			sourceTree = "<group>";
+		};
+		3F06A875272ADABE005D076B /* PocketChefWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3F06A876272ADABF005D076B /* InterfaceController.swift */,
+				3F06A878272ADABF005D076B /* ExtensionDelegate.swift */,
+				3F06A87A272ADABF005D076B /* NotificationController.swift */,
+				3F06A87C272ADABF005D076B /* ComplicationController.swift */,
+				3F06A87E272ADAC4005D076B /* Assets.xcassets */,
+				3F06A880272ADAC4005D076B /* Info.plist */,
+				3F06A881272ADAC4005D076B /* PushNotificationPayload.apns */,
+			);
+			path = "PocketChefWatch Extension";
+			sourceTree = "<group>";
+		};
 		3F4C607126E59CFE00A0B384 = {
 			isa = PBXGroup;
 			children = (
 				3F4C607C26E59CFE00A0B384 /* Pocket-Chef */,
+				3F06A866272ADAB7005D076B /* PocketChefWatch */,
+				3F06A875272ADABE005D076B /* PocketChefWatch Extension */,
 				3F4C607B26E59CFE00A0B384 /* Products */,
 				F60BF78DBC283710C37DE421 /* Pods */,
 				8B76EDFA68EDF3D65EA0F181 /* Frameworks */,
@@ -94,6 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				3F4C607A26E59CFE00A0B384 /* Pocket-Chef.app */,
+				3F06A865272ADAB7005D076B /* PocketChefWatch.app */,
+				3F06A871272ADABE005D076B /* PocketChefWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,6 +249,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3F06A864272ADAB7005D076B /* PocketChefWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F06A88C272ADAC4005D076B /* Build configuration list for PBXNativeTarget "PocketChefWatch" */;
+			buildPhases = (
+				3F06A863272ADAB7005D076B /* Resources */,
+				3F06A888272ADAC4005D076B /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F06A874272ADABE005D076B /* PBXTargetDependency */,
+			);
+			name = PocketChefWatch;
+			productName = PocketChefWatch;
+			productReference = 3F06A865272ADAB7005D076B /* PocketChefWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		3F06A870272ADABE005D076B /* PocketChefWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F06A88B272ADAC4005D076B /* Build configuration list for PBXNativeTarget "PocketChefWatch Extension" */;
+			buildPhases = (
+				3F06A86D272ADABE005D076B /* Sources */,
+				3F06A86E272ADABE005D076B /* Frameworks */,
+				3F06A86F272ADABE005D076B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PocketChefWatch Extension";
+			productName = "PocketChefWatch Extension";
+			productReference = 3F06A871272ADABE005D076B /* PocketChefWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		3F4C607926E59CFE00A0B384 /* Pocket-Chef */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F4C609126E59D0100A0B384 /* Build configuration list for PBXNativeTarget "Pocket-Chef" */;
@@ -161,10 +293,12 @@
 				3F4C607826E59CFE00A0B384 /* Resources */,
 				BBE5761E09B987C17FFAF1D3 /* [CP] Embed Pods Frameworks */,
 				BBB427D8ECA363D5682F2AC2 /* [CP] Copy Pods Resources */,
+				3F06A885272ADAC4005D076B /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3F06A883272ADAC4005D076B /* PBXTargetDependency */,
 			);
 			name = "Pocket-Chef";
 			productName = "Pocket-Chef";
@@ -180,6 +314,12 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					3F06A864272ADAB7005D076B = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					3F06A870272ADABE005D076B = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
 					3F4C607926E59CFE00A0B384 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
@@ -199,11 +339,30 @@
 			projectRoot = "";
 			targets = (
 				3F4C607926E59CFE00A0B384 /* Pocket-Chef */,
+				3F06A864272ADAB7005D076B /* PocketChefWatch */,
+				3F06A870272ADABE005D076B /* PocketChefWatch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3F06A863272ADAB7005D076B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F06A86B272ADABE005D076B /* Assets.xcassets in Resources */,
+				3F06A869272ADAB7005D076B /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F06A86F272ADABE005D076B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F06A87F272ADAC4005D076B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3F4C607826E59CFE00A0B384 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -277,6 +436,17 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3F06A86D272ADABE005D076B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F06A87B272ADABF005D076B /* NotificationController.swift in Sources */,
+				3F06A87D272ADABF005D076B /* ComplicationController.swift in Sources */,
+				3F06A879272ADABF005D076B /* ExtensionDelegate.swift in Sources */,
+				3F06A877272ADABF005D076B /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3F4C607626E59CFE00A0B384 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -307,7 +477,28 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		3F06A874272ADABE005D076B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F06A870272ADABE005D076B /* PocketChefWatch Extension */;
+			targetProxy = 3F06A873272ADABE005D076B /* PBXContainerItemProxy */;
+		};
+		3F06A883272ADAC4005D076B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F06A864272ADAB7005D076B /* PocketChefWatch */;
+			targetProxy = 3F06A882272ADAC4005D076B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		3F06A867272ADAB7005D076B /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F06A868272ADAB7005D076B /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		3F4C608326E59CFE00A0B384 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -327,6 +518,90 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3F06A886272ADAC4005D076B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D45VE7748L;
+				IBSC_MODULE = PocketChefWatch_Extension;
+				INFOPLIST_FILE = PocketChefWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.HaoZhong.Pocket-Chef.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		3F06A887272ADAC4005D076B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D45VE7748L;
+				IBSC_MODULE = PocketChefWatch_Extension;
+				INFOPLIST_FILE = PocketChefWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.HaoZhong.Pocket-Chef.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
+		3F06A889272ADAC4005D076B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D45VE7748L;
+				INFOPLIST_FILE = "PocketChefWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.HaoZhong.Pocket-Chef.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		3F06A88A272ADAC4005D076B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D45VE7748L;
+				INFOPLIST_FILE = "PocketChefWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.HaoZhong.Pocket-Chef.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
 		3F4C608F26E59D0100A0B384 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -486,6 +761,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3F06A88B272ADAC4005D076B /* Build configuration list for PBXNativeTarget "PocketChefWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F06A889272ADAC4005D076B /* Debug */,
+				3F06A88A272ADAC4005D076B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F06A88C272ADAC4005D076B /* Build configuration list for PBXNativeTarget "PocketChefWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F06A886272ADAC4005D076B /* Debug */,
+				3F06A887272ADAC4005D076B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3F4C607526E59CFE00A0B384 /* Build configuration list for PBXProject "Pocket-Chef" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

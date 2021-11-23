@@ -153,31 +153,65 @@ class IngredientsViewController: UIViewController, UITableViewDelegate, UITableV
                           let fat = json["fat"] as? String,
                           let protein = json["protein"] as? String,
                           let bad = json["bad"] as? [Any],
-                          let sat = bad[2] as? [String: Any],
-                          let satfat = sat["amount"] as? String,
-                          let sug = bad[4] as? [String: Any],
-                          let sugar = sug["amount"] as? String,
-                          let chol = bad[5] as? [String: Any],
-                          let cholest = chol["amount"] as? String,
-                          let sod = bad[6] as? [String: Any],
-                          let sodium = sod["amount"] as? String,
-                          let good = json["good"] as? [Any],
-                          let c = good[2] as? [String: Any],
-                          let vc = c["amount"] as? String,
-                          let a = good[3] as? [String: Any],
-                          let va = a["amount"] as? String,
-                          let fib = good[4] as? [String: Any],
-                          let fiber = fib["amount"] as? String,
-                          let calc = good[6] as? [String: Any],
-                          let calcium = calc["amount"] as? String
+                          let good = json["good"] as? [Any]
                     else {return}
                     
-                    let ir = good[9] as? [String: Any]
-                    let iron = ir?["amount"] as? String
-                    let po = good[12] as? [String: Any]
-                    let pota = po?["amount"] as? String
-                    let z = good[17] as? [String: Any]
-                    let zinc = z?["amount"] as? String
+                    var satfat: String? = nil
+                    var sugar: String? = nil
+                    var cholest: String? = nil
+                    var sodium: String? = nil
+                    
+                    for entry in bad {
+                        guard let nutrition = entry as? [String: Any],
+                              let title = nutrition["title"] as? String
+                        else {continue}
+                        
+                        switch title {
+                        case "Saturated Fat":
+                            satfat = nutrition["amount"] as? String
+                        case "Sugar":
+                            sugar = nutrition["amount"] as? String
+                        case "Cholesterol":
+                            cholest = nutrition["amount"] as? String
+                        case "Sodium":
+                            sodium = nutrition["amount"] as? String
+                        default:
+                            continue
+                        }
+                    }
+                    
+                    var vc: String? = nil
+                    var va: String? = nil
+                    var fiber: String? = nil
+                    var calcium: String? = nil
+                    var iron: String? = nil
+                    var pota: String? = nil
+                    var zinc: String? = nil
+                    
+                    for entry in good {
+                        guard let nutrition = entry as? [String: Any],
+                              let title = nutrition["title"] as? String
+                        else {continue}
+                        
+                        switch title {
+                        case "Vitamin C":
+                            vc = nutrition["amount"] as? String
+                        case "Vitamin A":
+                            va = nutrition["amount"] as? String
+                        case "Fiber":
+                            fiber = nutrition["amount"] as? String
+                        case "Calcium":
+                            calcium = nutrition["amount"] as? String
+                        case "Iron":
+                            iron = nutrition["amount"] as? String
+                        case "Potassium":
+                            pota = nutrition["amount"] as? String
+                        case "Zinc":
+                            zinc = nutrition["amount"] as? String
+                        default:
+                            continue
+                        }
+                    }
                     
                     self.cal.text = calories
                     self.carb.text = carbs
