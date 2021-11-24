@@ -12,7 +12,6 @@
 		3F06A872272ADABE005D076B /* PocketChefWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3F06A871272ADABE005D076B /* PocketChefWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3F06A877272ADABF005D076B /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06A876272ADABF005D076B /* InterfaceController.swift */; };
 		3F06A879272ADABF005D076B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06A878272ADABF005D076B /* ExtensionDelegate.swift */; };
-		3F06A87B272ADABF005D076B /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06A87A272ADABF005D076B /* NotificationController.swift */; };
 		3F06A87D272ADABF005D076B /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06A87C272ADABF005D076B /* ComplicationController.swift */; };
 		3F06A87F272ADAC4005D076B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F06A87E272ADAC4005D076B /* Assets.xcassets */; };
 		3F06A884272ADAC4005D076B /* PocketChefWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3F06A865272ADAB7005D076B /* PocketChefWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -94,11 +93,9 @@
 		3F06A871272ADABE005D076B /* PocketChefWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "PocketChefWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F06A876272ADABF005D076B /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		3F06A878272ADABF005D076B /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		3F06A87A272ADABF005D076B /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		3F06A87C272ADABF005D076B /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		3F06A87E272ADAC4005D076B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F06A880272ADAC4005D076B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F06A881272ADAC4005D076B /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		3F2A616727003062004A91D2 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		3F2A6169270146F5004A91D2 /* InstructionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionTableViewController.swift; sourceTree = "<group>"; };
 		3F2A616B27015E88004A91D2 /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
@@ -165,11 +162,9 @@
 			children = (
 				3F06A876272ADABF005D076B /* InterfaceController.swift */,
 				3F06A878272ADABF005D076B /* ExtensionDelegate.swift */,
-				3F06A87A272ADABF005D076B /* NotificationController.swift */,
 				3F06A87C272ADABF005D076B /* ComplicationController.swift */,
 				3F06A87E272ADAC4005D076B /* Assets.xcassets */,
 				3F06A880272ADAC4005D076B /* Info.plist */,
-				3F06A881272ADAC4005D076B /* PushNotificationPayload.apns */,
 			);
 			path = "PocketChefWatch Extension";
 			sourceTree = "<group>";
@@ -440,7 +435,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F06A87B272ADABF005D076B /* NotificationController.swift in Sources */,
 				3F06A87D272ADABF005D076B /* ComplicationController.swift in Sources */,
 				3F06A879272ADABF005D076B /* ExtensionDelegate.swift in Sources */,
 				3F06A877272ADABF005D076B /* InterfaceController.swift in Sources */,

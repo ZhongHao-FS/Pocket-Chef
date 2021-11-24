@@ -146,20 +146,32 @@ class IngredientsViewController: UIViewController, UITableViewDelegate, UITableV
                   let data = opt_data
             else {return}
             
+            var calories: String? = nil
+            var carbs: String? = nil
+            var fat: String? = nil
+            var protein: String? = nil
+            var satfat: String? = nil
+            var sugar: String? = nil
+            var cholest: String? = nil
+            var sodium: String? = nil
+            var vc: String? = nil
+            var va: String? = nil
+            var fiber: String? = nil
+            var calcium: String? = nil
+            var iron: String? = nil
+            var pota: String? = nil
+            var zinc: String? = nil
+            
             do {
                 if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
-                    guard let calories = json["calories"] as? String,
-                          let carbs = json["carbs"] as? String,
-                          let fat = json["fat"] as? String,
-                          let protein = json["protein"] as? String,
-                          let bad = json["bad"] as? [Any],
+                    calories = json["calories"] as? String
+                    carbs = json["carbs"] as? String
+                    fat = json["fat"] as? String
+                    protein = json["protein"] as? String
+                    
+                    guard let bad = json["bad"] as? [Any],
                           let good = json["good"] as? [Any]
                     else {return}
-                    
-                    var satfat: String? = nil
-                    var sugar: String? = nil
-                    var cholest: String? = nil
-                    var sodium: String? = nil
                     
                     for entry in bad {
                         guard let nutrition = entry as? [String: Any],
@@ -179,14 +191,6 @@ class IngredientsViewController: UIViewController, UITableViewDelegate, UITableV
                             continue
                         }
                     }
-                    
-                    var vc: String? = nil
-                    var va: String? = nil
-                    var fiber: String? = nil
-                    var calcium: String? = nil
-                    var iron: String? = nil
-                    var pota: String? = nil
-                    var zinc: String? = nil
                     
                     for entry in good {
                         guard let nutrition = entry as? [String: Any],
@@ -212,28 +216,29 @@ class IngredientsViewController: UIViewController, UITableViewDelegate, UITableV
                             continue
                         }
                     }
-                    
-                    self.cal.text = calories
-                    self.carb.text = carbs
-                    self.sugar.text = sugar
-                    self.fat.text = fat
-                    self.sat.text = satfat
-                    self.chol.text = cholest
-                    self.prot.text = protein
-                    self.fib.text = fiber
-                    self.sod.text = sodium
-                    self.pota.text = pota
-                    self.calc.text = calcium
-                    self.iron.text = iron
-                    self.z.text = zinc
-                    self.va.text = va
-                    self.vc.text = vc
                 }
             }
             catch {
                 print(error.localizedDescription)
             }
             
+            DispatchQueue.main.async {
+                self.cal.text = calories
+                self.carb.text = carbs
+                self.sugar.text = sugar
+                self.fat.text = fat
+                self.sat.text = satfat
+                self.chol.text = cholest
+                self.prot.text = protein
+                self.fib.text = fiber
+                self.sod.text = sodium
+                self.pota.text = pota
+                self.calc.text = calcium
+                self.iron.text = iron
+                self.z.text = zinc
+                self.va.text = va
+                self.vc.text = vc
+            }
         })
         
         dataTask.resume()

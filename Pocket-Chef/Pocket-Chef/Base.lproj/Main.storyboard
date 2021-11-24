@@ -507,7 +507,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ueB-oy-hzs" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="-88" width="414" height="2259"/>
+                                        <rect key="frame" x="0.0" y="-88" width="414" height="1759"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cDI-YM-h4q" userLabel="PhotoView">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="420"/>
@@ -561,9 +561,9 @@
                                                 </constraints>
                                             </view>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfw-jU-vdo" userLabel="ContainerViewA">
-                                                <rect key="frame" x="8" y="451" width="398" height="1800"/>
+                                                <rect key="frame" x="8" y="451" width="398" height="1300"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="1800" id="jR5-cz-Jnb"/>
+                                                    <constraint firstAttribute="height" constant="1300" id="rwr-dF-eAT"/>
                                                 </constraints>
                                                 <connections>
                                                     <segue destination="cIF-Bb-BE9" kind="embed" id="GQ7-6c-f11"/>
@@ -667,7 +667,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g5f-6M-TvB">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g5f-6M-TvB">
                                             <rect key="frame" x="20" y="22.5" width="30.5" height="13.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -692,14 +692,14 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="cIF-Bb-BE9" customClass="IngredientsViewController" customModule="Pocket_Chef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="69d-N0-QkQ">
-                        <rect key="frame" x="0.0" y="0.0" width="398" height="1800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="398" height="1300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7xu-gI-myL">
-                                <rect key="frame" x="0.0" y="0.0" width="398" height="1800"/>
+                                <rect key="frame" x="0.0" y="0.0" width="398" height="1300"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XSK-iV-PY8" userLabel="IngredientView">
-                                        <rect key="frame" x="0.0" y="0.0" width="398" height="760"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="242.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhZ-ZH-5TM">
                                                 <rect key="frame" x="23" y="72" width="352" height="28.5"/>
@@ -746,7 +746,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="880-zl-q8V">
-                                        <rect key="frame" x="0.0" y="797.5" width="398" height="39"/>
+                                        <rect key="frame" x="0.0" y="307.5" width="398" height="39"/>
                                         <color key="backgroundColor" red="0.4823529412" green="0.92941176469999998" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="22"/>
                                         <state key="normal" title="Add to Shopping List">
@@ -757,16 +757,16 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2lm-eU-pxx" userLabel="NutritionView">
-                                        <rect key="frame" x="0.0" y="874" width="398" height="926"/>
+                                        <rect key="frame" x="0.0" y="411.5" width="398" height="888.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nutritional Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHt-VL-ihO">
-                                                <rect key="frame" x="15" y="10" width="368" height="66"/>
+                                                <rect key="frame" x="15" y="10" width="368" height="28.5"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="24"/>
                                                 <color key="textColor" red="0.90777581929999995" green="0.57961553340000005" blue="0.2077135742" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zjA-JM-a06">
-                                                <rect key="frame" x="15" y="91" width="368" height="810"/>
+                                                <rect key="frame" x="15" y="53.5" width="368" height="810"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SrR-Wz-TW0" userLabel="CalView">
                                                         <rect key="frame" x="0.0" y="0.0" width="368" height="54"/>
@@ -1178,7 +1178,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="LX4-nu-JDN"/>
-                    <size key="freeformSize" width="398" height="1800"/>
+                    <size key="freeformSize" width="398" height="1300"/>
                     <connections>
                         <outlet property="addButton" destination="880-zl-q8V" id="BjV-j8-sXa"/>
                         <outlet property="cal" destination="SkT-uS-xX1" id="jNv-pQ-Nl0"/>
@@ -1913,7 +1913,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cUe-RA-37C"/>
+        <segue reference="5le-e4-gd6"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Cards" width="23.5" height="19"/>

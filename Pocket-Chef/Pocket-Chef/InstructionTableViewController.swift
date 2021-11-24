@@ -16,20 +16,6 @@ class InstructionTableViewController: UITableViewController, WCSessionDelegate {
     
     func sessionDidDeactivate(_ session: WCSession) {}
     
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
-        DispatchQueue.main.async {
-            if let getList = message["getObjectList"] as? Bool {
-                if getList {
-                    guard let data = try? NSKeyedArchiver.archivedData(withRootObject: self.instructions, requiringSecureCoding: false)
-                    else {
-                        fatalError("NSArchiving Error")
-                    }
-                    replyHandler(["passObjectList": data])
-                }
-            }
-        }
-    }
-    
     var id = 0
     var instructions = [String]()
     var recipeName = ""
@@ -56,7 +42,18 @@ class InstructionTableViewController: UITableViewController, WCSessionDelegate {
             session = WCSession.default
         }
     }
-
+    
+    func sendInstruction() {
+        if session?.activationState == .activated {
+            let kvMessage: [String: Any] = ["passingInstructionArray": self.instructions]
+            if let session = self.session, session.isReachable {
+                session.sendMessage(kvMessage, replyHandler: nil, errorHandler: {error in
+                    print(error)
+                })
+            }
+        }
+    }
+    
     func loadInstructions() {
         let request = NSMutableURLRequest(url: NSURL(string: "https://api.spoonacular.com/recipes/\(id)/analyzedInstructions?apiKey=56113b8493f8442dae66892e54246bfa")! as URL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
         request.httpMethod = "GET"
@@ -103,6 +100,8 @@ class InstructionTableViewController: UITableViewController, WCSessionDelegate {
                 newInstruction.setValue(self.instructions, forKey: "steps")
                 newInstruction.setValue(self.recipeName, forKey: "title")
                 self.appDelegate.saveContext()
+                
+                self.sendInstruction()
             }
         })
         

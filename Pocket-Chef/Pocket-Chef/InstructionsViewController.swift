@@ -7,8 +7,15 @@
 
 import UIKit
 import CoreData
+import WatchConnectivity
 
-class InstructionsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class InstructionsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {}
+    
+    func sessionDidDeactivate(_ session: WCSession) {}
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return instructions[index].count
     }
@@ -40,6 +47,14 @@ class InstructionsViewController: UIViewController, UITableViewDelegate, UITable
     var titles = [String]()
     var index = 0
     var managedContext: NSManagedObjectContext!
+    var session: WCSession? {
+        didSet {
+            if let session = session {
+                session.delegate = self
+                session.activate()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +63,21 @@ class InstructionsViewController: UIViewController, UITableViewDelegate, UITable
         loadCoreInstruction()
         titleLabel.text = titles[index]
         checkButtons()
+        
+        if WCSession.isSupported() {
+            session = WCSession.default
+        }
+    }
+    
+    func sendInstruction() {
+        if session?.activationState == .activated {
+            let kvMessage: [String: Any] = ["passingInstructionArray": self.instructions[self.index]]
+            if let session = self.session, session.isReachable {
+                session.sendMessage(kvMessage, replyHandler: nil, errorHandler: {error in
+                    print(error)
+                })
+            }
+        }
     }
     
     func loadCoreInstruction() {
@@ -69,18 +99,27 @@ class InstructionsViewController: UIViewController, UITableViewDelegate, UITable
         DispatchQueue.main.async {
             self.index = self.instructions.count - 1
             self.stepList.reloadData()
+            self.checkButtons()
+            if !self.instructions[self.index].isEmpty {
+                self.sendInstruction()
+            }
         }
     }
     
     func checkButtons() {
-        previousButton.isEnabled = true
-        nextButton.isEnabled = true
-        
-        if index <= 0 {
+        if instructions.isEmpty {
             previousButton.isEnabled = false
-        }
-        if index >= instructions.count - 1 {
             nextButton.isEnabled = false
+        } else {
+            previousButton.isEnabled = true
+            nextButton.isEnabled = true
+            
+            if index <= 0 {
+                previousButton.isEnabled = false
+            }
+            if index >= instructions.count - 1 {
+                nextButton.isEnabled = false
+            }
         }
     }
     
@@ -89,6 +128,9 @@ class InstructionsViewController: UIViewController, UITableViewDelegate, UITable
         titleLabel.text = titles[index]
         stepList.reloadData()
         checkButtons()
+        if !instructions[index].isEmpty {
+            sendInstruction()
+        }
     }
     
     @IBAction func nextTapped(_ sender: UIButton) {
@@ -96,6 +138,9 @@ class InstructionsViewController: UIViewController, UITableViewDelegate, UITable
         titleLabel.text = titles[index]
         stepList.reloadData()
         checkButtons()
+        if !instructions[index].isEmpty {
+            sendInstruction()
+        }
     }
     
     /*
