@@ -1,15 +1,14 @@
 # Pocket-Chef
- MDV3-2109
+ MDV4-2111
 
-PROBLEMS THE APP SOLVES/WHAT THE APP DOES
+Hao Zhong
 
 
-Search feature 
+Git Repository:
 
-List and rank recipes, ingredients, and restaurants according to the user’s selection using Spoonacular and TripAdvisor API.
+https://github.com/ZhongHao-FS/Pocket-Chef
 
-Detects and uses the user’s location info.
+Project plan can be found in the pitch document submitted earlier.
 
-Login function optional
-
-Local and remote data storage
+Features implemented:
+Show recipe instructions

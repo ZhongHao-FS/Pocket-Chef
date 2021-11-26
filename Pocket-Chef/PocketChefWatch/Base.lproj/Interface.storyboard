@@ -13,7 +13,7 @@
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="PocketChefWatch" customModuleProvider="target">
                     <items>
                         <label alignment="center" text="Label" textAlignment="center" id="H1Y-BW-xYI"/>
-                        <label width="1" alignment="left" text="Label" numberOfLines="3" id="M73-Ox-flH"/>
+                        <label width="1" alignment="left" text="Label" numberOfLines="4" id="M73-Ox-flH"/>
                         <group width="1" alignment="left" verticalAlignment="bottom" id="uiU-EH-XGh">
                             <items>
                                 <button width="0.45000000000000001" alignment="left" title="Previous" id="xxw-dr-IC5">
@@ -36,10 +36,39 @@
                         <outlet property="nextButton" destination="kfM-hg-glS" id="WeZ-93-o6k"/>
                         <outlet property="previousButton" destination="xxw-dr-IC5" id="WSi-CO-dJG"/>
                         <outlet property="stepNum" destination="H1Y-BW-xYI" id="JsT-cC-7a2"/>
+                        <segue destination="cdb-zE-p3B" kind="relationship" relationship="nextPage" id="Zrs-ba-bzs"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Timer Interface Controller-->
+        <scene sceneID="Enz-cM-gM2">
+            <objects>
+                <controller id="cdb-zE-p3B" customClass="TimerInterfaceController" customModule="PocketChefWatch_Extension">
+                    <items>
+                        <picker height="50" alignment="left" id="lt0-ai-Mdh">
+                            <connections>
+                                <action selector="pickerItemChanged:" destination="cdb-zE-p3B" id="2OA-JG-Yl8"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="Start" id="iZv-w4-43z">
+                            <connections>
+                                <action selector="buttonTapped" destination="cdb-zE-p3B" id="45p-kB-Fk2"/>
+                            </connections>
+                        </button>
+                        <timer width="1" alignment="center" textAlignment="center" id="BT7-he-DEc">
+                            <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
+                        </timer>
+                    </items>
+                    <connections>
+                        <outlet property="button" destination="iZv-w4-43z" id="vMz-9m-kib"/>
+                        <outlet property="timer" destination="BT7-he-DEc" id="B03-zx-fin"/>
+                        <outlet property="timerPicker" destination="lt0-ai-Mdh" id="q0K-TT-acr"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="536" y="345"/>
         </scene>
     </scenes>
 </document>
