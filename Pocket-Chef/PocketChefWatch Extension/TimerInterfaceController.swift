@@ -47,7 +47,7 @@ class TimerInterfaceController: WKInterfaceController {
     
     @IBAction func buttonTapped() {
         if started == false {
-            let pickerSec = Double(pickerIndex + 1) as TimeInterval
+            let pickerSec = Double((pickerIndex + 1) * 60) as TimeInterval
             let time = Date(timeIntervalSinceNow: pickerSec)
             timer.setDate(time)
             timer.start()
